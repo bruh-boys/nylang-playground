@@ -12,6 +12,7 @@ func Share(ctx echo.Context) (err error) {
 	f, _ := ioutil.TempFile("./share", "*.nyl")
 
 	io.Copy(f, ctx.Request().Body)
+	ctx.Response().Write([]byte(f.Name()))
 	return
 
 }
