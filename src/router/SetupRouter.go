@@ -12,6 +12,7 @@ func SetupRouter() {
 	app.POST("/run", controller.Execute)
 	app.POST("/lexer", controller.Execute)
 	app.POST("/parser", controller.Execute)
+	app.POST("/share", controller.Share)
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
