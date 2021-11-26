@@ -14,16 +14,13 @@ func Execute(ctx echo.Context) (err error) {
 
 	cmd := exec.Command("./nylang", ctx.Path()[1:], "-c", string(b))
 
-	cmd.Stdout = ctx.Response().Writer
-	cmd.Stderr = ctx.Response().Writer
+	cmd.Stdout = ctx.Response()
+	cmd.Stderr = ctx.Response()
 	err = cmd.Run()
-
 	go func() {
-
-		time.Sleep(time.Minute * 1)
+		time.Sleep(time.Minute)
 
 		cmd.Process.Kill()
-
 	}()
 	return
 }

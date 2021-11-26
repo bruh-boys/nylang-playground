@@ -1,2 +1,4 @@
 nylang
-share/*.nyl
+share/*
+codemirror
+static/style/*

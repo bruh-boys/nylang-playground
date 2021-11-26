@@ -9,13 +9,14 @@ import (
 
 func unzipLib() {
 	d, _ := os.UserHomeDir()
-	Unzip("lib.zip", filepath.Join(d, ".nylang"))
+	unzip("lib.zip", filepath.Join(d, ".nylang"))
+	unzip("codemirror.zip", "./codemirror")
 
 }
 
 //thanks to https://golangcode.com/unzip-files-in-go/
 
-func Unzip(src string, dest string) (filenames []string, err error) {
+func unzip(src string, dest string) (filenames []string, err error) {
 
 	r, err := zip.OpenReader(src)
 	if err != nil {
