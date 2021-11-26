@@ -10,7 +10,7 @@ import (
 func unzipLib() {
 	d, _ := os.UserHomeDir()
 	unzip("lib.zip", filepath.Join(d, ".nylang"))
-	unzip("codemirror.zip", "./codemirror")
+	unzip("codemirror.zip", "./")
 
 }
 
