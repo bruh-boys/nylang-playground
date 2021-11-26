@@ -13,12 +13,15 @@ func SetupRouter() {
 	app.POST("/lexer", controller.Execute)
 	app.POST("/parser", controller.Execute)
 	app.POST("/share", controller.Share)
+	app.GET("/share", controller.Look)
 	app.Static("/codemirror", "./codemirror")
+
 	app.Static("/static", "./static")
 	app.GET("/", func(c echo.Context) error {
 		return c.File("./template/index.html")
 
 	})
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"

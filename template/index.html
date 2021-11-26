@@ -38,13 +38,18 @@
         </button>
 
     </div>
+    <pre><code id="real-code" style="display:none">{{.Code}}</code></pre>
     <div id="notebook">
         <div id="notebook-content"></div>
         <script>
+            let output='🍙 main = 🏨 () {\n     🎤🎶 ( "sex" ) ;\n } ;\n'
+            if(window.location.pathname!="/"){
+                output=document.getElementById("real-code").innerText
+            }
             const notebook = document.getElementById('notebook-content');
             var editor = CodeMirror(notebook, {
                 lineNumbers: true,
-                value: '🍙 main = 🏨 () {\n     🎤🎶 ( "sex" ) ;\n } ;\n',
+                value: output,
                 mode: "javascript",
                 theme: "material",
             });
@@ -56,6 +61,21 @@
         </script>
     </div>
     </div>
+    <script>
+        const share=document.getElementById("share")
+        share.addEventListener("click",()=>{
+            const code=editor.getValue()
+           
+            fetch("/share",{
+                method:"POST",
+                body:code,
+            }).then(res=>res.text()).then(res=>{
+                console.log(res)
+                window.location.href=res
+            })
+            
+        })
+    </script>
     <div id="output">
         <pre><code id="output-code"></code></pre>
         <script>
