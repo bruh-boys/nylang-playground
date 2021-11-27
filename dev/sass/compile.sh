@@ -1,1 +1,1 @@
-sass .:../../static/style/ --watch
+sass dev/sass:static/style/ 
