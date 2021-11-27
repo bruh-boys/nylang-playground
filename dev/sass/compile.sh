@@ -1,1 +1,0 @@
-sass dev/sass:static/style/ 

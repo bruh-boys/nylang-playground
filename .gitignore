@@ -1,4 +1,6 @@
-nylang
-share/*
-codemirror
-static/style/*
+codemirror/
+public/JS
+public/styles
+share/
+
+go.sum

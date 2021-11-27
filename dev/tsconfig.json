@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Language and Environment */
+    "target": "ES6",
+    "lib": ["DOM", "DOM.Iterable", "ES2015", "ES2015.Promise", "ES6"],
+
+    /* Modules */
+    "module": "ESNext",
+    "rootDir": "./TS",
+    "moduleResolution": "Classic",
+
+    /* Emit */
+    "sourceMap": true,
+    "outDir": "../public/JS",
+    "removeComments": true,
+
+    /* Interop Constraints */
+    // "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "alwaysStrict": true,
+
+    /* Completeness */
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./TS/**/*.ts"
+  ]
+}
